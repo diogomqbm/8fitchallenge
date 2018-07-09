@@ -20,7 +20,7 @@ const createRootNavigator = () => createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             headerLeft: (
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Image source={ require('../Assets/Images/icArrowLeft.png') }/>
+                    <Image source={require('../Assets/Images/icArrowLeft.png')} />
                 </TouchableOpacity>
             )
         })
@@ -31,7 +31,7 @@ const createRootNavigator = () => createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             headerLeft: (
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Image source={ require('../Assets/Images/icArrowLeft.png') }/>
+                    <Image source={require('../Assets/Images/icArrowLeft.png')} />
                 </TouchableOpacity>
             )
         })
@@ -45,8 +45,8 @@ const createRootNavigator = () => createStackNavigator({
         }
 
     },
-    
-    
+
+
 })
 
 export default createRootNavigator

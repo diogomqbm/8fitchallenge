@@ -8,8 +8,8 @@ const inputHeight = (props) => {
             width: props.measure === 'meterInput' ? '85%' : '45%',
             flexDirection: 'row',
             justifyContent: 'center',
-            alignItems:'center',
-            alignSelf:'center',
+            alignItems: 'center',
+            alignSelf: 'center',
             borderBottomWidth: 1,
             borderBottomColor: '#9FA1A2',
         },
@@ -17,17 +17,17 @@ const inputHeight = (props) => {
             fontSize: 32,
             fontFamily: props.font,
             width: '50%',
-            alignSelf:'center',
-            textAlign:'right',
+            alignSelf: 'center',
+            textAlign: 'right',
             height: 32,
         },
-        placeholder:{
-            color:'#9FA1A2',
-            fontSize:16,
+        placeholder: {
+            color: '#9FA1A2',
+            fontSize: 16,
             fontFamily: props.placeholderFont,
-            alignSelf:'flex-end',
+            alignSelf: 'flex-end',
             marginLeft: 8,
-            marginRight:'40%'
+            marginRight: '40%'
         }
     })
 

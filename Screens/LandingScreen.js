@@ -5,7 +5,7 @@ import { Font } from 'expo'
 
 
 class LandingScreen extends Component {
-    
+
     state = {
         fontLoaded: false,
         animatedVal: new Animated.Value(-175),
@@ -17,7 +17,7 @@ class LandingScreen extends Component {
         logoFadeInAnimation: new Animated.Value(0),
         cardsAnimation: new Animated.Value(0),
     }
-    
+
     goals = [
         {
             id: 0,
@@ -50,7 +50,7 @@ class LandingScreen extends Component {
     }
 
     animation = () => {
-        const logoInitialFadeIn = 
+        const logoInitialFadeIn =
             Animated.timing(
                 this.state.logoFadeInAnimation,
                 {
@@ -79,7 +79,7 @@ class LandingScreen extends Component {
                 deceleration: 0.996,
             })
         ])
-            
+
         const contentAnimation = Animated.parallel([
             Animated.timing(
                 this.state.textFadeAnimation,
@@ -113,52 +113,52 @@ class LandingScreen extends Component {
     }
 
     askAge = (goal) => {
-        this.props.navigation.navigate('EntryAge', { 
+        this.props.navigation.navigate('EntryAge', {
             goal,
             firaBold: 'fira-bold',
             firaRegular: 'fira-regular',
             firaMedium: 'fira-medium'
-         })
+        })
     }
 
-        render() {
-            let { animatedVal, cardsAnimation, textMovementAnimation, textFadeAnimation, logoFadeInAnimation, logoWidthAnimation, logoHeightAnimation, logoMovementAnimation } = this.state
-            return (
-                <ImageBackground source={require('../Assets/Images/backgroundGrain.png')} style={styles.container}>
-                    {
-                        this.state.fontLoaded ?
+    render() {
+        let { animatedVal, cardsAnimation, textMovementAnimation, textFadeAnimation, logoFadeInAnimation, logoWidthAnimation, logoHeightAnimation, logoMovementAnimation } = this.state
+        return (
+            <ImageBackground source={require('../Assets/Images/backgroundGrain.png')} style={styles.container}>
+                {
+                    this.state.fontLoaded ?
                         (
                             <View style={styles.mainView}>
-                                <Animated.View style={[styles.animation, {left: animatedVal}]}>
-                                    <ImageBackground source={require('../Assets/Images/imgBeans3x.png')} style={styles.leftImage}/>
+                                <Animated.View style={[styles.animation, { left: animatedVal }]}>
+                                    <ImageBackground source={require('../Assets/Images/imgBeans3x.png')} style={styles.leftImage} />
                                 </Animated.View>
-                                <Animated.View style={[styles.animation, {right: animatedVal}]}>
-                                    <ImageBackground source={require('../Assets/Images/imgMat.png')} style={styles.rightMat}/>
-                                    <ImageBackground source={require('../Assets/Images/imgDumbbell.png')} style={styles.rightDumbbell}/>
+                                <Animated.View style={[styles.animation, { right: animatedVal }]}>
+                                    <ImageBackground source={require('../Assets/Images/imgMat.png')} style={styles.rightMat} />
+                                    <ImageBackground source={require('../Assets/Images/imgDumbbell.png')} style={styles.rightDumbbell} />
                                 </Animated.View>
                                 <View style={styles.header}>
-                                    <Animated.Image style={[styles.logo, {opacity: logoFadeInAnimation, width: logoWidthAnimation, height: logoHeightAnimation, bottom: logoMovementAnimation}]} source={require('../Assets/Images/icon8Logo.png')}/>
-                                    <Animated.Text style={[styles.logoText, {bottom: textMovementAnimation, opacity: textFadeAnimation}]}>WELCOME TO 8FIT</Animated.Text>
-                                    <Animated.Text style={[styles.bodyTitle, {bottom: textMovementAnimation, opacity: textFadeAnimation}]}>What's your goal?</Animated.Text>
+                                    <Animated.Image style={[styles.logo, { opacity: logoFadeInAnimation, width: logoWidthAnimation, height: logoHeightAnimation, bottom: logoMovementAnimation }]} source={require('../Assets/Images/icon8Logo.png')} />
+                                    <Animated.Text style={[styles.logoText, { bottom: textMovementAnimation, opacity: textFadeAnimation }]}>WELCOME TO 8FIT</Animated.Text>
+                                    <Animated.Text style={[styles.bodyTitle, { bottom: textMovementAnimation, opacity: textFadeAnimation }]}>What's your goal?</Animated.Text>
                                 </View>
-                                <Animated.View style={[styles.body, {opacity: cardsAnimation}]}>
-                                {
-                                    this.goals.map(goal => (
-                                        <View key={goal.type} style={[styles.cardView]}>
-                                            <Card askAge={this.askAge} title={goal.title} subtitle={goal.subtitle} 
-                                            titleFont={'fira-bold'} subtitleFont={'fira-regular'}/>
-                                        </View>
-                                    ))
-                                }
+                                <Animated.View style={[styles.body, { opacity: cardsAnimation }]}>
+                                    {
+                                        this.goals.map(goal => (
+                                            <View key={goal.type} style={[styles.cardView]}>
+                                                <Card askAge={this.askAge} title={goal.title} subtitle={goal.subtitle}
+                                                    titleFont={'fira-bold'} subtitleFont={'fira-regular'} />
+                                            </View>
+                                        ))
+                                    }
                                 </Animated.View>
                             </View>
                         )
-                    : null
+                        : null
                 }
             </ImageBackground>
-            )
-        }
+        )
     }
+}
 
 const styles = StyleSheet.create({
     mainView: {
@@ -172,52 +172,52 @@ const styles = StyleSheet.create({
         height: 120,
         alignSelf: 'center',
         alignItems: 'flex-start',
-        justifyContent:'center',
+        justifyContent: 'center',
     },
     container: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems:'center',
-        width:'100%',
-        height:'100%'
+        alignItems: 'center',
+        width: '100%',
+        height: '100%'
     },
     leftImage: {
-        position:'absolute',
+        position: 'absolute',
         left: 0,
         top: '17%',
         height: '80%',
         width: '50%'
     },
     animation: {
-        position:'absolute',
+        position: 'absolute',
         height: '100%',
         width: '100%'
     },
     rightDumbbell: {
-        position:'absolute',
+        position: 'absolute',
         right: 0,
         bottom: '7%',
         height: '35%',
         width: '30%'
     },
     rightMat: {
-        position:'absolute',
+        position: 'absolute',
         right: 0,
         bottom: '3%',
         height: '10%',
         width: '25%'
     },
-    header:{
+    header: {
         marginTop: 70,
-        alignSelf:'center',
-        justifyContent:'center'
+        alignSelf: 'center',
+        justifyContent: 'center'
     },
     body: {
         flex: 0.8,
         marginTop: 30,
-        alignSelf:'center',
-        justifyContent:'flex-start',
+        alignSelf: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'stretch',
         flexDirection: 'column',
         width: '100%'
@@ -235,17 +235,17 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     logo: {
-        alignSelf:'center',
+        alignSelf: 'center',
         width: 22,
         height: 44,
-        marginBottom:'3.5%'
-    }, 
+        marginBottom: '3.5%'
+    },
     mat: {
-        position:'absolute',
-        width:'10%',
-        height:'10%',
-        right:0,
-        bottom:0,
+        position: 'absolute',
+        width: '10%',
+        height: '10%',
+        right: 0,
+        bottom: 0,
     }
 
 

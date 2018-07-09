@@ -12,14 +12,14 @@ const RecapScreen = (props) => {
             justifyContent: 'space-between',
         },
         rightParsley: {
-            position:'absolute',
+            position: 'absolute',
             right: 0,
             top: '9%',
             height: '60%',
             width: '45%'
         },
         leftBeans: {
-            position:'absolute',
+            position: 'absolute',
             left: 0,
             bottom: 0,
             height: '40%',
@@ -37,7 +37,7 @@ const RecapScreen = (props) => {
             alignItems: 'center',
             justifyContent: 'center',
             width: 110,
-            backgroundColor:'#25272A'
+            backgroundColor: '#25272A'
         },
         buttonText: {
             color: '#fff',
@@ -72,7 +72,7 @@ const RecapScreen = (props) => {
         detailsContent: {
             flexDirection: 'row',
             justifyContent: 'space-between',
-            alignItems:'center',
+            alignItems: 'center',
             paddingRight: 20,
             paddingTop: 20,
             paddingBottom: 20,
@@ -88,18 +88,18 @@ const RecapScreen = (props) => {
             left: 10,
         },
         body: {
-            marginTop: '35%', 
-            alignItems: 'center',           
+            marginTop: '35%',
+            alignItems: 'center',
         }
     })
 
     return (
         <ImageBackground source={require('../Assets/Images/backgroundGrain.png')} style={styles.container}>
             <TouchableOpacity style={styles.goBackArrow} onPress={() => props.navigation.goBack()}>
-                    <Image source={ require('../Assets/Images/icArrowLeft.png') }/>
+                <Image source={require('../Assets/Images/icArrowLeft.png')} />
             </TouchableOpacity>
-            <ImageBackground source={require('../Assets/Images/imgParsley3x.png')} style={styles.rightParsley}/>
-            <ImageBackground source={require('../Assets/Images/imgBeans3x.png')} style={styles.leftBeans}/>
+            <ImageBackground source={require('../Assets/Images/imgParsley3x.png')} style={styles.rightParsley} />
+            <ImageBackground source={require('../Assets/Images/imgBeans3x.png')} style={styles.leftBeans} />
             <View style={styles.body}>
                 <Text style={styles.title}>Confirm your details:</Text>
                 <View style={styles.detailsContainer}>
@@ -111,11 +111,11 @@ const RecapScreen = (props) => {
                     </View>
                     <View style={styles.detailsContent}>
                         <Text style={styles.detailsText}>Height</Text>
-                    {
-                        params.measure === 'ft' ? 
-                        ( <Text style={styles.detailsContentText}>{params.height.feet} ft {params.height.inches} in</Text> )
-                        : ( <Text style={styles.detailsContentText}>{params.height}cm</Text> )
-                    }
+                        {
+                            params.measure === 'ft' ?
+                                (<Text style={styles.detailsContentText}>{params.height.feet} ft {params.height.inches} in</Text>)
+                                : (<Text style={styles.detailsContentText}>{params.height}cm</Text>)
+                        }
                     </View>
                 </View>
             </View>

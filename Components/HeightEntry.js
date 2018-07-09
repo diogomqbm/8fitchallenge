@@ -78,11 +78,11 @@ const HeightEntry = (props) => {
         },
 
         feetHeightContainer: {
-            flexDirection:'row',
+            flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginLeft:'7%',
-            marginRight:'7%'
+            marginLeft: '7%',
+            marginRight: '7%'
         }
 
 
@@ -94,33 +94,33 @@ const HeightEntry = (props) => {
             {
                 props.measure === buttonType.feet ? (
                     <View style={styles.feetHeightContainer}>
-                        <InputHeight 
-                            value={props.feetValue} 
-                            onChange={props.onChange} 
-                            font={props.font} 
-                            placeholder={placeholder.feet} 
-                            placeholderFont={props.placeholderFont} 
+                        <InputHeight
+                            value={props.feetValue}
+                            onChange={props.onChange}
+                            font={props.font}
+                            placeholder={placeholder.feet}
+                            placeholderFont={props.placeholderFont}
                             measure={measure.feet}
                         />
                         <InputHeight
-                            value={props.inchesValue} 
-                            onChange={props.onChange} 
-                            font={props.font} 
-                            placeholder={placeholder.inches} 
-                            placeholderFont={props.placeholderFont} 
-                            measure={measure.inches} 
+                            value={props.inchesValue}
+                            onChange={props.onChange}
+                            font={props.font}
+                            placeholder={placeholder.inches}
+                            placeholderFont={props.placeholderFont}
+                            measure={measure.inches}
                         />
                     </View>
                 )
-                : ( <InputHeight
-                    value={props.meterValue} 
-                    font={props.font} 
-                    onChange={props.onChange} 
-                    placeholder={placeholder.centimeter} 
-                    placeholderFont={props.placeholderFont} 
-                    measure={measure.meter}
-                    /> 
-                )
+                    : (<InputHeight
+                        value={props.meterValue}
+                        font={props.font}
+                        onChange={props.onChange}
+                        placeholder={placeholder.centimeter}
+                        placeholderFont={props.placeholderFont}
+                        measure={measure.meter}
+                    />
+                    )
             }
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={[props.measure === buttonType.feet ? styles.buttonActive : styles.buttonInactive, styles.button, styles.buttonLeft]} onPress={() => props.toggleMeasure(buttonType.feet)}>

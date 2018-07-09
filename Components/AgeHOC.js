@@ -48,26 +48,26 @@ export const createAgeEntry = (AgeEntry) => {
                 firaMedium: params.firaMedium,
                 firaRegular: params.firaRegular
             })
-            
+
         }
-        
-        render(){
-            styles = StyleSheet.create({ 
+
+        render() {
+            styles = StyleSheet.create({
                 container: {
                     flex: 1,
-                    alignItems:'center',
+                    alignItems: 'center',
                     justifyContent: 'center',
                     width: '100%',
                     backgroundColor: '#fff'
                 },
-            
+
                 body: {
                     height: '100%',
                     width: '100%',
                 },
-            
+
                 clickableButton: {
-                    backgroundColor:'#25272A',
+                    backgroundColor: '#25272A',
                 },
                 nonClickableButton: {
                     backgroundColor: '#9FA1A2',
@@ -92,7 +92,7 @@ export const createAgeEntry = (AgeEntry) => {
                 },
                 progressBar: {
                     height: 3,
-                    backgroundColor:'#3CDF9C',
+                    backgroundColor: '#3CDF9C',
                     width: '75%'
                 },
                 componentContainer: {
@@ -100,18 +100,18 @@ export const createAgeEntry = (AgeEntry) => {
                 },
                 fullProgressBar: {
                     height: 3,
-                    backgroundColor:'#3CDF9C',
+                    backgroundColor: '#3CDF9C',
                     width: '100%'
                 }
-            
-            
+
+
             })
             return (
                 <View style={styles.container}>
                     {
                         this.state.fontLoaded ? (
                             <View style={styles.body}>
-                                <View style={styles.progressBar}/>
+                                <View style={styles.progressBar} />
                                 <AgeEntry
                                     age={this.state.age}
                                     font={this.props.navigation.state.params.firaBold}
@@ -125,7 +125,7 @@ export const createAgeEntry = (AgeEntry) => {
                                 </KeyboardAvoidingView>
                             </View>
                         ) : null
-                    } 
+                    }
                 </View>
             )
         }
