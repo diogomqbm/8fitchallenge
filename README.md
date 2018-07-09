@@ -1,7 +1,16 @@
-## Instructions
-* git clone or download files
-* yarn install to install all dependencies
-* yarn start to run project
+# Instructions
+* Clone or download repo
+```
+git clone https://github.com/diogomqbm/8fitchallenge.git
+```
+* Install all dependencies
+```
+yarn install
+```
+* Run project
+```
+yarn start
+```
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
